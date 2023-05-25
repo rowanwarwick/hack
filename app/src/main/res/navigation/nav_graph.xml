@@ -27,20 +27,7 @@
         android:id="@+id/mainFragment"
         android:name="com.example.kazan.fragments.MainFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" >
-        <action
-            android:id="@+id/action_mainFragment_to_messageFragment"
-            app:destination="@id/messageFragment" />
-        <action
-            android:id="@+id/action_mainFragment_to_favoriteFragment"
-            app:destination="@id/favoriteFragment" />
-        <action
-            android:id="@+id/action_mainFragment_to_historyFragment"
-            app:destination="@id/historyFragment" />
-        <action
-            android:id="@+id/action_mainFragment_to_mapFragment"
-            app:destination="@id/mapFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_main" />
     <fragment
         android:id="@+id/messageFragment"
         android:name="com.example.kazan.fragments.MessageFragment"
@@ -61,4 +48,9 @@
         android:name="com.example.kazan.fragments.MapFragment"
         android:label="fragment_map"
         tools:layout="@layout/fragment_map" />
+    <fragment
+        android:id="@+id/eventFragment"
+        android:name="com.example.kazan.fragments.EventFragment"
+        android:label="fragment_event"
+        tools:layout="@layout/fragment_event" />
 </navigation>
