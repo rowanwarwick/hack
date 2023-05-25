@@ -1,11 +1,17 @@
 package com.example.kazan.fragments
 
+import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.RequiresApi
+import com.example.kazan.MainActivity
 import com.example.kazan.R
+import com.example.kazan.adapters.FotoAdapter
+import com.example.kazan.data.Event
 import com.example.kazan.databinding.FragmentEventBinding
 
 class EventFragment : Fragment() {
@@ -18,5 +24,22 @@ class EventFragment : Fragment() {
     ): View {
         binding = FragmentEventBinding.inflate(inflater, container, false)
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        val event = arguments?.getSerializable("event") as Event?
+        if (event != null) {
+            binding.name.text = event.name
+            binding.place.text = event.address
+            binding.date.text = event.date
+        }
+        (requireActivity() as MainActivity).setSupportActionBar(binding.toolbar)
+        (requireActivity() as MainActivity).supportActionBar?.setDisplayShowTitleEnabled(false)
+        (requireActivity() as MainActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        binding.toolbar.setNavigationOnClickListener {
+            requireActivity().onBackPressedDispatcher.onBackPressed()
+        }
+        binding.pagerSpeakers.adapter = FotoAdapter(List(6) {"foto"})
     }
 }

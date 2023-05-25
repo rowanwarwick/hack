@@ -12,16 +12,16 @@ import com.example.kazan.interfaces.OuterRecycleLocker
 
 class ManAdapter(
     private val man: List<Man>,
-    private val listener: ListenerMan,
-    private val outerRecycleLocker: OuterRecycleLocker,
+    private val listener: ListenerMan? = null,
+    private val outerRecycleLocker: OuterRecycleLocker? = null,
     private val isHorizontal: Boolean = false
 ) :
     RecyclerView.Adapter<ManAdapter.ManViewHolder>() {
 
     class ManViewHolder(
         view: View,
-        private val listener: ListenerMan,
-        private val outerRecycleLocker: OuterRecycleLocker
+        private val listener: ListenerMan? = null,
+        private val outerRecycleLocker: OuterRecycleLocker? = null
     ) : RecyclerView.ViewHolder(view) {
         private val person = ItemManBinding.bind(view)
 
@@ -31,10 +31,10 @@ class ManAdapter(
                 tags.text = man.tags
             }
             itemView.setOnClickListener {
-                listener.onClick(man)
+                listener?.onClick(man)
             }
             itemView.setOnTouchListener { _, _ ->
-                outerRecycleLocker.setRecyclerLocker(false)
+                outerRecycleLocker?.setRecyclerLocker(false)
                 false
             }
         }

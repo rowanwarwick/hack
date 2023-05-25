@@ -27,7 +27,17 @@
         android:id="@+id/mainFragment"
         android:name="com.example.kazan.fragments.MainFragment"
         android:label="fragment_main"
-        tools:layout="@layout/fragment_main" />
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_eventFragment"
+            app:destination="@id/eventFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_startupFragment"
+            app:destination="@id/startupFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_manFragment"
+            app:destination="@id/manFragment" />
+    </fragment>
     <fragment
         android:id="@+id/messageFragment"
         android:name="com.example.kazan.fragments.MessageFragment"
@@ -53,4 +63,14 @@
         android:name="com.example.kazan.fragments.EventFragment"
         android:label="fragment_event"
         tools:layout="@layout/fragment_event" />
+    <fragment
+        android:id="@+id/manFragment"
+        android:name="com.example.kazan.fragments.ManFragment"
+        android:label="fragment_man"
+        tools:layout="@layout/fragment_man" />
+    <fragment
+        android:id="@+id/startupFragment"
+        android:name="com.example.kazan.fragments.StartupFragment"
+        android:label="fragment_startup"
+        tools:layout="@layout/fragment_startup" />
 </navigation>

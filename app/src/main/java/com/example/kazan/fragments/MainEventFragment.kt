@@ -19,7 +19,6 @@ import com.google.android.material.tabs.TabLayoutMediator
 class MainEventFragment : Fragment() {
 
     lateinit var binding: FragmentMainEventBinding
-    lateinit var adapterEvents: EventAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,7 +30,7 @@ class MainEventFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        adapterEvents = EventAdapter(eventList, object : ListenerEvent {
+        val adapterEvents = EventAdapter(eventList, object : ListenerEvent {
             override fun onClick(event: Event) {
                 val bundle = Bundle()
                 bundle.putSerializable("event", event)
@@ -39,5 +38,6 @@ class MainEventFragment : Fragment() {
             }
         })
         binding.recyclerEvent.adapter = adapterEvents
+        binding.now.isChecked = true
     }
 }

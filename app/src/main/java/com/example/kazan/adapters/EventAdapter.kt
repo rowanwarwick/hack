@@ -13,7 +13,7 @@ import com.example.kazan.interfaces.OuterRecycleLocker
 
 class EventAdapter(
     private val events: List<Event>,
-    private val listener: ListenerEvent,
+    private val listener: ListenerEvent? = null,
     private val outerRecycleLocker: OuterRecycleLocker? = null,
     private val isHorizontal: Boolean = false
 ) :
@@ -21,7 +21,7 @@ class EventAdapter(
 
     class EventViewHolder(
         view: View,
-        private val listener: ListenerEvent,
+        private val listener: ListenerEvent? = null,
         private val outerRecycleLocker: OuterRecycleLocker? = null,
         private val isHorizontal: Boolean
     ) : ViewHolder(view) {
@@ -38,7 +38,7 @@ class EventAdapter(
                 eventName.isSelected = true
             }
             itemView.setOnClickListener {
-                listener.onClick(event)
+                listener?.onClick(event)
             }
             itemView.setOnTouchListener { _, _ ->
                 outerRecycleLocker?.setRecyclerLocker(false)
