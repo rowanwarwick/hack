@@ -12,5 +12,6 @@
     <color name="red">#FFFF0000</color>
     <color name="textColor">#FF2C2C2C</color>
     <color name="hint">#FFB8B8B8</color>
+    <color name="textFormItem">#FFEAEAEA</color>
 
 </resources>

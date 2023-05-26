@@ -15,11 +15,12 @@ import com.example.kazan.interfaces.OuterRecycleLocker
 import com.example.kazan.R
 import com.example.kazan.adapters.MenuPagerAdapter
 import com.example.kazan.databinding.FragmentMainBinding
+import com.example.kazan.interfaces.MoveToTab
 import com.example.kazan.shared_preferences.SharedPrefs
 import com.google.android.material.tabs.TabLayout
 import com.google.android.material.tabs.TabLayoutMediator
 
-class MainFragment : Fragment(),OuterRecycleLocker {
+class MainFragment : Fragment(),OuterRecycleLocker,MoveToTab {
 
     lateinit var binding: FragmentMainBinding
     private val backCallback: BackCallback by lazy { BackCallback(requireActivity()) }
@@ -35,12 +36,10 @@ class MainFragment : Fragment(),OuterRecycleLocker {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val user = "${
-            SharedPrefs.getValue(
-                requireContext(),
-                "name"
-            )
-        } ${SharedPrefs.getValue(requireContext(), "secName")}"
+        val user = SharedPrefs.getValue(
+            requireContext(),
+            "name"
+        )
         (requireActivity() as MainActivity).setSupportActionBar(binding.toolbar)
         binding.toolbar.setNavigationOnClickListener {
             (requireActivity() as MainActivity).binding.main.openDrawer(GravityCompat.START)
@@ -60,11 +59,11 @@ class MainFragment : Fragment(),OuterRecycleLocker {
                 ) == "Стартапер"
             ) "Люди" else "Стартапы"
         )
-        binding.toolbar.title = nameTabs[0]
+        binding.textToolbar.text = nameTabs[0]
         binding.tabs.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab?) {
                 val int = tab?.position
-                binding.toolbar.title = nameTabs[int ?: 0]
+                binding.textToolbar.text = nameTabs[int ?: 0]
             }
 
             override fun onTabUnselected(tab: TabLayout.Tab?) {}
@@ -73,7 +72,7 @@ class MainFragment : Fragment(),OuterRecycleLocker {
     }
 
     private fun setTabs() {
-        binding.viewPager.adapter = MenuPagerAdapter(requireActivity(), this)
+        binding.viewPager.adapter = MenuPagerAdapter(requireActivity(), this, this)
         TabLayoutMediator(binding.tabs, binding.viewPager) { tab, position ->
             when (position) {
                 0 -> tab.setIcon(R.drawable.home)
@@ -85,5 +84,10 @@ class MainFragment : Fragment(),OuterRecycleLocker {
 
     override fun setRecyclerLocker(condition: Boolean) {
         binding.viewPager.isUserInputEnabled = condition
+    }
+
+    override fun moveToTab(tab: Int) {
+        val requireTab = binding.tabs.getTabAt(tab)
+        requireTab?.select()
     }
 }

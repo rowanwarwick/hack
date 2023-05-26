@@ -28,8 +28,10 @@ class ManAdapter(
         fun bind(man: Man) {
             person.apply {
                 name.text = man.name
-                tags.text = man.tags
+                val adapter = TagsAdapter(man.tagsPerson, outerRecycleLocker)
+                tags.adapter = adapter
             }
+
             itemView.setOnClickListener {
                 listener?.onClick(man)
             }

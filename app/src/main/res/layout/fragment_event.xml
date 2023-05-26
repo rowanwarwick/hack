@@ -1,122 +1,220 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.EventFragment">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/image"
-        android:src="@drawable/kazan"
-        android:scaleType="centerCrop"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
-
     <LinearLayout
-        android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="10"
-        app:layout_constraintTop_toBottomOf="@+id/image">
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="50dp"
+                android:fontFamily="@font/montserrat_semibold"
+                android:gravity="center"
+                android:textColor="@color/textColor"
+                android:textSize="16sp"
+                tools:text="title" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/kazan"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:weightSum="10"
+            app:layout_constraintTop_toBottomOf="@+id/image">
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="9"
+                android:ellipsize="marquee"
+                android:fontFamily="@font/montserrat_extrabold"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:scrollHorizontally="true"
+                android:singleLine="true"
+                android:textAlignment="viewStart"
+                android:textColor="@color/textColor"
+                android:textSize="20sp"
+                tools:text="name" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:button="@drawable/like_check"
+                android:theme="@style/MyCheckBox" />
+
+        </LinearLayout>
 
         <TextView
-            android:id="@+id/name"
+            android:fontFamily="@font/montserrat_medium"
+            android:textSize="14sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="9"
-            android:ellipsize="marquee"
-            android:marqueeRepeatLimit="marquee_forever"
-            android:scrollHorizontally="true"
-            android:singleLine="true"
-            android:text="name"
-            android:textAlignment="viewStart" />
+            android:layout_marginHorizontal="15dp"
+            android:background="@drawable/radio_group"
+            android:text="Tag" />
 
-        <CheckBox
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/date"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:button="@drawable/like_check"
-            android:theme="@style/MyCheckBox" />
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginVertical="5dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingLeft="4dp"
+                android:paddingRight="15dp"
+                android:src="@drawable/clock" />
+
+            <TextView
+                android:id="@+id/event_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="marquee"
+                android:fontFamily="@font/montserrat_medium"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:scrollHorizontally="true"
+                android:singleLine="true"
+                android:textAlignment="viewStart"
+                android:textColor="@color/textColor"
+                android:textSize="14sp"
+                tools:text="22.09.2023 08:00" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/place"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingEnd="10dp"
+                android:src="@drawable/location" />
+
+            <TextView
+                android:id="@+id/event_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="marquee"
+                android:fontFamily="@font/montserrat"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:scrollHorizontally="true"
+                android:singleLine="true"
+                android:textAlignment="viewStart"
+                android:textColor="@color/textColor"
+                android:textSize="14sp"
+                tools:text="с. Большие кабаны" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/event"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="@string/About_event"
+            android:textColor="@color/textColor"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@+id/place" />
+
+        <TextView
+            android:id="@+id/info_event"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="5dp"
+            android:ellipsize="start"
+            android:fontFamily="@font/montserrat"
+            android:textColor="@color/textColor"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@+id/event"
+            tools:text="описалово" />
+
+        <TextView
+            android:id="@+id/more"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="@string/More"
+            android:textColor="@color/textColor"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@+id/info_event" />
+
+        <TextView
+            android:id="@+id/website"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:textColor="@color/textColor"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@+id/more"
+            tools:text="вебсайт" />
+
+        <TextView
+            android:id="@+id/speakers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="20sp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="Спикеры"
+            android:textColor="@color/textColor"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@+id/website" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/pager_speakers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@+id/speakers" />
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/date"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ellipsize="marquee"
-        android:marqueeRepeatLimit="marquee_forever"
-        android:scrollHorizontally="true"
-        android:singleLine="true"
-        android:text="date"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
 
-    <TextView
-        android:id="@+id/place"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ellipsize="marquee"
-        android:marqueeRepeatLimit="marquee_forever"
-        android:scrollHorizontally="true"
-        android:singleLine="true"
-        android:text="place"
-        app:layout_constraintTop_toBottomOf="@+id/date" />
-
-    <TextView
-        android:id="@+id/event"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="о мероприятии"
-        app:layout_constraintTop_toBottomOf="@+id/place" />
-
-    <TextView
-        android:id="@+id/info_event"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="описалово"
-        android:ellipsize="start"
-        android:maxLines="8"
-        app:layout_constraintTop_toBottomOf="@+id/event" />
-
-    <TextView
-        android:id="@+id/more"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="узнать больше"
-        app:layout_constraintTop_toBottomOf="@+id/info_event" />
-
-    <TextView
-        android:id="@+id/website"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="вебсайт"
-        app:layout_constraintTop_toBottomOf="@+id/more" />
-
-    <TextView
-        android:id="@+id/speakers"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Спикеры"
-        app:layout_constraintTop_toBottomOf="@+id/website" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:orientation="horizontal"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        android:id="@+id/pager_speakers"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/speakers" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

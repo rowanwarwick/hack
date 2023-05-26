@@ -30,9 +30,13 @@ class EventFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val event = arguments?.getSerializable("event") as Event?
         if (event != null) {
+            binding.title.text = event.name
             binding.name.text = event.name
-            binding.place.text = event.address
-            binding.date.text = event.date
+            binding.name.isSelected = true
+            binding.eventAddress.text = event.address
+            binding.eventAddress.isSelected = true
+            binding.eventDate.text = event.date
+            binding.eventDate.isSelected = true
         }
         (requireActivity() as MainActivity).setSupportActionBar(binding.toolbar)
         (requireActivity() as MainActivity).supportActionBar?.setDisplayShowTitleEnabled(false)

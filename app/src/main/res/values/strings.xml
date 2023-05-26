@@ -7,6 +7,16 @@
     <string name="NameAndFamily">Фамилия и Имя</string>
     <string name="Password">Пароль</string>
     <string name="Mail">Почта</string>
+    <string name="RemindPassword"><u>Забыли пароль?</u></string>
+    <string name="Role">Роль</string>
+    <string name="events">Предстоящие события</string>
+    <string name="startup">Стартапы</string>
+    <string name="Investors">Инвесторы</string>
+    <string name="Specialist">Специалисты</string>
+    <string name="All">Все</string>
+    <string name="Search">Поиск</string>
+    <string name="About_event">О мероприятии</string>
+    <string name="More">Узнать больше</string>
     <string-array name="spinner_role">
         <item>Специалист</item>
         <item>Стартапер</item>
