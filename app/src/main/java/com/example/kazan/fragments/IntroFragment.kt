@@ -9,6 +9,10 @@ import com.example.kazan.interfaces.DrawerLocker
 import com.example.kazan.MainActivity
 import com.example.kazan.R
 import com.example.kazan.databinding.FragmentIntroBinding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
 
 class IntroFragment : Fragment() {
@@ -20,14 +24,11 @@ class IntroFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         binding = FragmentIntroBinding.inflate(inflater, container, false)
-        return binding.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        binding.firstToSecond.setOnClickListener {
+        CoroutineScope(Dispatchers.Main).launch {
+            delay(2000)
             (activity as MainActivity).navController.navigate(R.id.action_introFragment_to_logInFragment)
         }
+        return binding.root
     }
 
     override fun onStart() {

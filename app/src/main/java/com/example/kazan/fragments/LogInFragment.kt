@@ -37,14 +37,12 @@ class LogInFragment : Fragment() {
         logIn()
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, backCallback)
         binding.kindLogIn.setOnCheckedChangeListener { _, isChecked ->
-            if (!isChecked) {
+            if (!binding.registration.isChecked) {
                 binding.secName.visibility = View.GONE
-                binding.name.visibility = View.GONE
                 binding.spinner.visibility = View.GONE
                 binding.logInButton.text = "Вход"
             } else {
                 binding.secName.visibility = View.VISIBLE
-                binding.name.visibility = View.VISIBLE
                 binding.spinner.visibility = View.VISIBLE
                 binding.logInButton.text = "Регистрация"
             }
@@ -63,9 +61,8 @@ class LogInFragment : Fragment() {
 
     private fun logIn() {
         binding.logInButton.setOnClickListener {
-            if (binding.kindLogIn.isChecked) {
-                SharedPrefs.setValue(requireContext(), "name", binding.name.text.toString())
-                SharedPrefs.setValue(requireContext(), "secName", binding.secName.text.toString())
+            if (binding.registration.isChecked) {
+                SharedPrefs.setValue(requireContext(), "name", binding.secName.text.toString())
                 SharedPrefs.setValue(requireContext(), "mail", binding.mail.text.toString())
                 SharedPrefs.setValue(requireContext(), "password", binding.password.text.toString())
                 SharedPrefs.setValue(
@@ -77,21 +74,18 @@ class LogInFragment : Fragment() {
                 when (binding.password.text.toString()) {
                     "investor" -> {
                         SharedPrefs.setValue(requireContext(), "name", "Important")
-                        SharedPrefs.setValue(requireContext(), "secName", "Investor")
                         SharedPrefs.setValue(requireContext(), "mail", "school21@mail.ru")
                         SharedPrefs.setValue(requireContext(), "password", "1234")
                         SharedPrefs.setValue(requireContext(), "role", "Инвестор")
                     }
                     "startup" -> {
                         SharedPrefs.setValue(requireContext(), "name", "Important")
-                        SharedPrefs.setValue(requireContext(), "secName", "Startuper")
                         SharedPrefs.setValue(requireContext(), "mail", "school21@mail.ru")
                         SharedPrefs.setValue(requireContext(), "password", "1234")
                         SharedPrefs.setValue(requireContext(), "role", "Стартапер")
                     }
                     "specialist" -> {
                         SharedPrefs.setValue(requireContext(), "name", "Important")
-                        SharedPrefs.setValue(requireContext(), "secName", "Specialist")
                         SharedPrefs.setValue(requireContext(), "mail", "school21@mail.ru")
                         SharedPrefs.setValue(requireContext(), "password", "1234")
                         SharedPrefs.setValue(requireContext(), "role", "Специалист")

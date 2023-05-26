@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,71 +7,96 @@
     tools:context=".fragments.LogInFragment">
 
     <LinearLayout
-        android:id="@+id/linearLayout2"
-        android:layout_width="match_parent"
+        android:id="@+id/linearLayout4"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="vertical"
+        android:layout_marginTop="70dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="20dp"
-            android:src="@drawable/logo"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:src="@drawable/logo" />
 
-        <com.google.android.material.materialswitch.MaterialSwitch
-            android:id="@+id/kind_log_in"
+        <TextView
+            style="@style/MyTextLogo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:checked="true"
-            android:clickable="true"
-            android:focusable="true"
-            android:textOff="Вход"
-            android:textOn="Регистрация"
-            android:thumb="@drawable/switch_thumb"
-            app:showText="true"
-            app:switchTextAppearance="@style/TextAppearance.AppCompat"
-            app:track="@drawable/switch_track" />
+            android:layout_gravity="center"
+            android:layout_marginStart="10dp"
+            android:text="@string/logo" />
 
     </LinearLayout>
+
+    <RadioGroup
+        android:orientation="horizontal"
+        android:id="@+id/kind_log_in"
+        android:background="@drawable/radio_group"
+        android:layout_marginTop="150dp"
+        android:layout_marginHorizontal="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/input"
+            android:checked="true"
+            android:text="@string/LogIn"
+            android:fontFamily="@font/inter"
+            android:textSize="16sp"
+            android:textColor="@color/color"
+            android:button="@android:color/transparent"
+            android:background="@drawable/radio_buttom"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="50dp"/>
+
+        <androidx.appcompat.widget.AppCompatRadioButton
+            android:id="@+id/registration"
+            android:fontFamily="@font/inter"
+            android:textSize="16sp"
+            android:textColor="@color/color"
+            android:text="@string/Registration"
+            android:button="@android:color/transparent"
+            android:background="@drawable/radio_buttom"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="50dp"/>
+
+    </RadioGroup>
 
     <LinearLayout
         android:id="@+id/linearLayout"
         android:layout_width="match_parent"
+        android:layout_marginHorizontal="20dp"
         android:layout_height="0dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="45dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toTopOf="@+id/log_in_button"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
+        app:layout_constraintTop_toBottomOf="@+id/kind_log_in">
 
         <com.google.android.material.textfield.TextInputLayout
+            app:helperTextTextColor="@color/hint"
+            app:hintTextColor="@color/hint"
+            app:counterTextColor="@color/hint"
+            android:textColorHint="@color/hint"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/sec_name"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Фамилия" />
-
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/name"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Имя" />
+                android:layout_height="70dp"
+                android:background="@drawable/radio_buttom"
+                android:fontFamily="@font/montserrat_semibold"
+                android:textColor="@color/textColor"
+                android:hint="@string/NameAndFamily" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -84,7 +108,7 @@
                 android:id="@+id/password"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Пароль" />
+                android:hint="@string/Password" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
@@ -96,14 +120,14 @@
                 android:id="@+id/mail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="Почта" />
+                android:hint="@string/Mail" />
 
         </com.google.android.material.textfield.TextInputLayout>
 
         <Spinner
             android:id="@+id/spinner"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content" />
 
     </LinearLayout>
 
@@ -111,8 +135,8 @@
         android:id="@+id/log_in_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="регистрация"
         android:layout_marginBottom="20dp"
+        android:text="регистрация"
         app:layout_constraintBottom_toBottomOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

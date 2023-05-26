@@ -1,6 +1,12 @@
 <resources>
     <string name="app_name">Kazan</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="logo">Стартап Казань</string>
+    <string name="LogIn">Вход</string>
+    <string name="Registration">Регистрация</string>
+    <string name="NameAndFamily">Фамилия и Имя</string>
+    <string name="Password">Пароль</string>
+    <string name="Mail">Почта</string>
     <string-array name="spinner_role">
         <item>Специалист</item>
         <item>Стартапер</item>
