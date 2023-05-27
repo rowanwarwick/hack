@@ -1,138 +1,300 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".fragments.StartupFragment">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <ImageView
-        android:id="@+id/image"
-        android:src="@drawable/avatar"
-        android:scaleType="centerCrop"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
-
     <LinearLayout
-        android:id="@+id/linearLayout3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:weightSum="10"
-        app:layout_constraintTop_toBottomOf="@+id/image">
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="50dp"
+                android:fontFamily="@font/montserrat_semibold"
+                android:gravity="center"
+                android:textColor="@color/textColor"
+                android:textSize="16sp"
+                tools:text="title" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/kazan"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:weightSum="10"
+            app:layout_constraintTop_toBottomOf="@+id/image">
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="9"
+                android:ellipsize="marquee"
+                android:fontFamily="@font/montserrat_extrabold"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:scrollHorizontally="true"
+                android:singleLine="true"
+                android:textAlignment="viewStart"
+                android:textColor="@color/textColor"
+                android:textSize="16sp"
+                tools:text="name" />
+
+            <CheckBox
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:button="@drawable/like_check"
+                android:theme="@style/MyCheckBox" />
+
+        </LinearLayout>
 
         <TextView
-            android:id="@+id/name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="9"
-            android:ellipsize="marquee"
-            android:marqueeRepeatLimit="marquee_forever"
-            android:scrollHorizontally="true"
-            android:singleLine="true"
-            android:text="name"
-            android:textAlignment="viewStart" />
+            android:layout_marginHorizontal="15dp"
+            android:background="@drawable/item_man"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="Tag"
+            android:textSize="14sp" />
 
-        <CheckBox
-            android:layout_width="wrap_content"
+        <LinearLayout
+            android:id="@+id/date"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginVertical="5dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:paddingLeft="4dp"
+                android:paddingRight="15dp"
+                android:src="@drawable/startup_user" />
+
+            <TextView
+                android:id="@+id/startupcreator"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ellipsize="marquee"
+                android:fontFamily="@font/montserrat_medium"
+                android:marqueeRepeatLimit="marquee_forever"
+                android:scrollHorizontally="true"
+                android:singleLine="true"
+                android:textAlignment="viewStart"
+                android:textColor="@color/textColor"
+                android:textSize="14sp"
+                tools:text="22.09.2023 08:00" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/startup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="@string/AboutProgect"
+            android:textColor="@color/textColor"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@+id/place" />
+
+        <TextView
+            android:id="@+id/info_startup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="5dp"
+            android:ellipsize="start"
+            android:fontFamily="@font/montserrat"
+            android:textColor="@color/textColor"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@+id/event"
+            tools:text="описалово" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/radio_group"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <TextView
+                android:id="@+id/stage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_semibold"
+                android:text="@string/Stage_investing"
+                android:textColor="@color/textColor"
+                android:textSize="16sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:fontFamily="@font/montserrat_semibold"
+                android:text="seed"
+                android:textColor="@color/green"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="15dp"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_semibold"
+                android:text="@string/Need_sum"
+                android:textColor="@color/textColor"
+                android:textSize="16sp" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="left"
+                    android:text="0"
+                    android:textColor="@color/textColor"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:id="@+id/currect_sum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/montserrat_semibold"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="@color/textColor"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/max_sum"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:gravity="right"
+                    android:text="0"
+                    android:textColor="@color/textColor"
+                    android:textSize="10sp" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/more"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="@string/More"
+            android:textColor="@color/textColor"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@+id/info_event" />
+
+        <TextView
+            android:id="@+id/website"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="15dp"
+            android:autoLink="web"
+            android:fontFamily="@font/montserrat_medium"
+            android:linksClickable="true"
+            android:text="google.ru"
+            android:textColor="@color/textColor"
+            android:textColorLink="@color/hint"
+            android:textSize="14sp"
+            app:layout_constraintTop_toBottomOf="@+id/more" />
+
+        <TextView
+            android:id="@+id/speakers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="20sp"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="@string/Creator"
+            android:textColor="@color/textColor"
+            android:textSize="16sp"
+            app:layout_constraintTop_toBottomOf="@+id/website" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/pager_speakers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:layout_constraintTop_toBottomOf="@+id/speakers" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/sign_up"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="15dp"
             android:layout_weight="1"
-            android:button="@drawable/like_check"
-            android:theme="@style/MyCheckBox" />
+            android:background="@drawable/button_green"
+            android:fontFamily="@font/montserrat_semibold"
+            android:text="@string/connect"
+            android:textColor="@color/textColor"
+            android:textSize="16sp" />
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/about_project"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ellipsize="marquee"
-        android:marqueeRepeatLimit="marquee_forever"
-        android:scrollHorizontally="true"
-        android:singleLine="true"
-        android:text="О проекте"
-        app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
-
-    <TextView
-        android:id="@+id/info_about_project"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="place"
-        app:layout_constraintTop_toBottomOf="@+id/about_project" />
-
-    <TextView
-        android:id="@+id/stage"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Стадия инвестирования"
-        app:layout_constraintTop_toBottomOf="@+id/info_about_project" />
-
-    <TextView
-        android:id="@+id/stage_investing"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="этап инвестирования"
-        android:ellipsize="start"
-        android:maxLines="8"
-        app:layout_constraintTop_toBottomOf="@+id/stage" />
-
-    <TextView
-        android:id="@+id/need_money"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Необходимая сумма"
-        app:layout_constraintTop_toBottomOf="@+id/stage_investing" />
-
-    <TextView
-        android:id="@+id/how_much"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="информация"
-        app:layout_constraintTop_toBottomOf="@+id/need_money" />
-
-    <TextView
-        android:id="@+id/more"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Необходимая сумма"
-        app:layout_constraintTop_toBottomOf="@+id/how_much" />
-
-    <TextView
-        android:id="@+id/more_info"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="веб-сайт"
-        app:layout_constraintTop_toBottomOf="@+id/more" />
-
-    <TextView
-        android:id="@+id/made_this"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Основатели"
-        app:layout_constraintTop_toBottomOf="@+id/more_info" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:orientation="horizontal"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        android:id="@+id/pager_speakers"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/made_this" />
-
-    <Button
-        android:layout_width="match_parent"
-        android:text="Связаться"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

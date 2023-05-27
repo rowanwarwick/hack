@@ -74,13 +74,13 @@
         </LinearLayout>
 
         <TextView
-            android:fontFamily="@font/montserrat_medium"
-            android:textSize="14sp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="15dp"
-            android:background="@drawable/radio_group"
-            android:text="Tag" />
+            android:background="@drawable/item_man"
+            android:fontFamily="@font/montserrat_medium"
+            android:text="Tag"
+            android:textSize="14sp" />
 
         <LinearLayout
             android:id="@+id/date"
@@ -189,8 +189,11 @@
             android:fontFamily="@font/montserrat_medium"
             android:textColor="@color/textColor"
             android:textSize="14sp"
+            android:autoLink="web"
+            android:linksClickable="true"
+            android:textColorLink="@color/hint"
             app:layout_constraintTop_toBottomOf="@+id/more"
-            tools:text="вебсайт" />
+            android:text="google.ru" />
 
         <TextView
             android:id="@+id/speakers"
@@ -199,7 +202,7 @@
             android:layout_marginHorizontal="15dp"
             android:layout_marginTop="20sp"
             android:fontFamily="@font/montserrat_semibold"
-            android:text="Спикеры"
+            android:text="@string/Spikers"
             android:textColor="@color/textColor"
             android:textSize="16sp"
             app:layout_constraintTop_toBottomOf="@+id/website" />
@@ -213,6 +216,40 @@
             android:orientation="horizontal"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintTop_toBottomOf="@+id/speakers" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginBottom="15dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/free_button"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_black"
+                android:fontFamily="@font/montserrat_semibold"
+                android:text="@string/free"
+                android:textColor="@color/white"
+                android:textSize="16sp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/sign_up"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginStart="5dp"
+                android:layout_marginEnd="15dp"
+                android:layout_weight="1"
+                android:background="@drawable/button_green"
+                android:fontFamily="@font/montserrat_semibold"
+                android:text="@string/sign_up"
+                android:textColor="@color/textColor"
+                android:textSize="16sp" />
+
+        </LinearLayout>
 
     </LinearLayout>
 

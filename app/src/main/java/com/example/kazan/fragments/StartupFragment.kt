@@ -9,6 +9,7 @@ import com.example.kazan.MainActivity
 import com.example.kazan.R
 import com.example.kazan.adapters.FotoAdapter
 import com.example.kazan.data.Event
+import com.example.kazan.data.Startup
 import com.example.kazan.databinding.FragmentStartupBinding
 
 class StartupFragment : Fragment() {
@@ -24,7 +25,7 @@ class StartupFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val event = arguments?.getSerializable("event") as Event?
+        val event = arguments?.getSerializable("startup") as Startup?
         if (event != null) {
             binding.name.text = event.name
         }

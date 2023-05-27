@@ -11,12 +11,18 @@
         android:id="@+id/search"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20dp"
+        android:layout_marginHorizontal="15dp"
+        android:layout_marginTop="20dp"
         android:hint="@string/Search"
-        app:boxCornerRadiusBottomEnd="16dp"
-        app:boxCornerRadiusBottomStart="16dp"
-        app:boxCornerRadiusTopEnd="16dp"
-        app:boxCornerRadiusTopStart="16dp"
+        android:textColorHint="@color/hint"
+        app:boxBackgroundColor="@color/white"
+        app:boxCornerRadiusBottomEnd="30dp"
+        app:boxCornerRadiusBottomStart="30dp"
+        app:boxCornerRadiusTopEnd="30dp"
+        app:boxCornerRadiusTopStart="30dp"
+        app:boxStrokeWidth="0dp"
+        app:boxStrokeWidthFocused="0dp"
+        app:hintTextColor="@color/hint"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:startIconDrawable="@drawable/search">
@@ -24,12 +30,17 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/search_et"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_medium"
+            android:textColor="@color/textColor"
+            android:textSize="16sp" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <RadioGroup
+        android:layout_marginTop="10dp"
         android:orientation="horizontal"
+        android:layout_marginHorizontal="15dp"
         android:id="@+id/tabs"
         android:background="@drawable/radio_group"
         app:layout_constraintTop_toBottomOf="@+id/search"
@@ -37,19 +48,25 @@
         android:layout_height="wrap_content">
 
         <androidx.appcompat.widget.AppCompatRadioButton
+            android:textColor="@color/textColor"
+            android:fontFamily="@font/montserrat_medium"
+            android:textSize="14sp"
             android:id="@+id/investors"
             android:text="Инвесторы"
             android:button="@android:color/transparent"
-            android:background="@drawable/radio_buttom_black"
+            android:background="@drawable/radio_button_green"
             android:gravity="center"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="50dp"/>
 
         <androidx.appcompat.widget.AppCompatRadioButton
+            android:textColor="@color/textColor"
+            android:fontFamily="@font/montserrat_medium"
+            android:textSize="14sp"
             android:text="Специалисты"
             android:button="@android:color/transparent"
-            android:background="@drawable/radio_buttom_black"
+            android:background="@drawable/radio_button_green"
             android:gravity="center"
             android:layout_weight="1"
             android:layout_width="0dp"
@@ -58,6 +75,8 @@
     </RadioGroup>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:layout_marginTop="15dp"
+        android:layout_marginHorizontal="15dp"
         android:id="@+id/recycler"
         android:layout_width="match_parent"
         android:layout_height="0dp"

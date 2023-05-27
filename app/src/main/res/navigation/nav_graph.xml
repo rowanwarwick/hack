@@ -35,8 +35,11 @@
             android:id="@+id/action_mainFragment_to_startupFragment"
             app:destination="@id/startupFragment" />
         <action
-            android:id="@+id/action_mainFragment_to_manFragment"
-            app:destination="@id/manFragment" />
+            android:id="@+id/action_mainFragment_to_specialistFragment"
+            app:destination="@id/specialistFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_investorFragment"
+            app:destination="@id/investorFragment" />
     </fragment>
     <fragment
         android:id="@+id/messageFragment"
@@ -64,13 +67,18 @@
         android:label="fragment_event"
         tools:layout="@layout/fragment_event" />
     <fragment
-        android:id="@+id/manFragment"
-        android:name="com.example.kazan.fragments.ManFragment"
-        android:label="fragment_man"
-        tools:layout="@layout/fragment_man" />
-    <fragment
         android:id="@+id/startupFragment"
         android:name="com.example.kazan.fragments.StartupFragment"
         android:label="fragment_startup"
         tools:layout="@layout/fragment_startup" />
+    <fragment
+        android:id="@+id/specialistFragment"
+        android:name="com.example.kazan.fragments.SpecialistFragment"
+        android:label="fragment_specialist"
+        tools:layout="@layout/fragment_specialist" />
+    <fragment
+        android:id="@+id/investorFragment"
+        android:name="com.example.kazan.fragments.InvestorFragment"
+        android:label="fragment_investor"
+        tools:layout="@layout/fragment_investor" />
 </navigation>

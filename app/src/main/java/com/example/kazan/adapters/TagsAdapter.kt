@@ -9,7 +9,7 @@ import com.example.kazan.R
 import com.example.kazan.databinding.ItemTagBinding
 import com.example.kazan.interfaces.OuterRecycleLocker
 
-class TagsAdapter(val tags: List<String>, val outerRecycleLocker: OuterRecycleLocker?) : RecyclerView.Adapter<TagsAdapter.TagsViewHolder>() {
+class TagsAdapter(val tags: List<String>, val outerRecycleLocker: OuterRecycleLocker? = null) : RecyclerView.Adapter<TagsAdapter.TagsViewHolder>() {
 
     class TagsViewHolder(view: View, val outerRecycleLocker: OuterRecycleLocker?) : ViewHolder(view) {
         private val tag = ItemTagBinding.bind(view)

@@ -17,6 +17,17 @@
     <string name="Search">Поиск</string>
     <string name="About_event">О мероприятии</string>
     <string name="More">Узнать больше</string>
+    <string name="Spikers">Спикеры</string>
+    <string name="free">бесплатно</string>
+    <string name="sign_up">записаться</string>
+    <string name="AboutProgect">О проекте</string>
+    <string name="Stage_investing">Стадия инвестирования</string>
+    <string name="Need_sum">Необходимая сумма</string>
+    <string name="Creator">Основатели</string>
+    <string name="connect">Связаться</string>
+    <string name="Resume"><u>Резюме</u></string>
+    <string name="Portfolio"><u>Портфолио</u></string>
+    <string name="About">О себе</string>
     <string-array name="spinner_role">
         <item>Специалист</item>
         <item>Стартапер</item>
