@@ -5,11 +5,11 @@ import java.io.Serializable
 
 
 data class Event(
-    val image: String,
+    val image: Int,
     val name: String,
-    val address: String,
     val date: String,
-    val speakers: List<String>,
+    val address: String,
+    val speakers: List<Int>,
     val typeEvent : TypeEvent,
     val about : String,
     val webAddress : String,
