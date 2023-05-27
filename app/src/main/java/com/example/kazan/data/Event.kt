@@ -12,6 +12,6 @@ data class Event(
     val speakers: List<String>,
     val typeEvent : TypeEvent,
     val about : String,
-    val webAdress : String,
+    val webAddress : String,
     val favorite : Boolean
 ) : Serializable
