@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import com.example.kazan.MainActivity
+import com.example.kazan.R
 import com.example.kazan.databinding.FragmentMessageBinding
 
 class MessageFragment : Fragment() {
@@ -27,7 +28,7 @@ class MessageFragment : Fragment() {
         (requireActivity() as MainActivity).setSupportActionBar(binding.toolbar)
         (requireActivity() as MainActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
         binding.toolbar.setNavigationOnClickListener {
-            requireActivity().onBackPressedDispatcher.onBackPressed()
+            (activity as MainActivity).navController.navigate(R.id.mainFragment)
         }
     }
 }

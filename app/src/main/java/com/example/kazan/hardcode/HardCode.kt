@@ -36,3 +36,4 @@ val manList = listOf(
     Man("Человек №12", "1", listOf("room", "dram", "babababam"), "Инвестор"),
     Man("Человек №13", "1", listOf("room", "dram", "babababam"), "Инвестор"),
 )
+

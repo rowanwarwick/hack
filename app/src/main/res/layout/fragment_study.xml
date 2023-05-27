@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragments.FavoriteFragment">
+    tools:context=".fragments.StudyFragment">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar"
@@ -18,7 +19,7 @@
         <TextView
             android:textColor="@color/textColor"
             android:id="@+id/text_toolbar"
-            android:text = "Избранное"
+            android:text = "Обучение"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fontFamily="@font/montserrat_semibold"
@@ -48,7 +49,7 @@
 
         <androidx.appcompat.widget.AppCompatRadioButton
             android:id="@+id/events"
-            android:text="@string/Event"
+            android:text="@string/State"
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_weight="1"
@@ -70,7 +71,7 @@
             android:gravity="center"
             android:textColor="@color/textColor"
             android:textSize="14sp"
-            tools:text="Специалисты" />
+            android:text="@string/Course" />
 
     </RadioGroup>
 

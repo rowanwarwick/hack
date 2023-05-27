@@ -18,11 +18,11 @@
         <TextView
             android:fontFamily="@font/montserrat_semibold"
             android:textSize="16sp"
+            android:textColor="@color/textColor"
             android:id="@+id/text_toolbar"
             android:gravity="center"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text=""/>
+            android:layout_height="match_parent"/>
         
     </androidx.appcompat.widget.Toolbar>
 

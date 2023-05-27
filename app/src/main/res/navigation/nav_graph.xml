@@ -81,4 +81,14 @@
         android:name="com.example.kazan.fragments.InvestorFragment"
         android:label="fragment_investor"
         tools:layout="@layout/fragment_investor" />
+    <fragment
+        android:id="@+id/supportFragment"
+        android:name="com.example.kazan.fragments.SupportFragment"
+        android:label="fragment_support"
+        tools:layout="@layout/fragment_support" />
+    <fragment
+        android:id="@+id/studyFragment"
+        android:name="com.example.kazan.fragments.StudyFragment"
+        android:label="fragment_study"
+        tools:layout="@layout/fragment_study" />
 </navigation>

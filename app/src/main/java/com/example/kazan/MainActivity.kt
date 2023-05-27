@@ -8,6 +8,7 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.example.kazan.databinding.ActivityMainBinding
 import com.example.kazan.interfaces.DrawerLocker
+import com.example.kazan.shared_preferences.SharedPrefs
 
 class MainActivity : AppCompatActivity(), DrawerLocker {
     lateinit var binding: ActivityMainBinding
@@ -34,7 +35,18 @@ class MainActivity : AppCompatActivity(), DrawerLocker {
             binding.main.closeDrawer(GravityCompat.START)
             navController.navigate(R.id.messageFragment)
         }
-        binding.user.text
+        binding.profileExit.setOnClickListener {
+            finish()
+        }
+        binding.study.setOnClickListener {
+            binding.main.closeDrawer(GravityCompat.START)
+            navController.navigate(R.id.studyFragment)
+        }
+        binding.support.setOnClickListener {
+            binding.main.closeDrawer(GravityCompat.START)
+            navController.navigate(R.id.supportFragment)
+        }
+        binding.user.text = SharedPrefs.getValue(this, "name")
     }
 
     override fun setDrawerLocker(condition: Boolean) {

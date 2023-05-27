@@ -14,31 +14,34 @@ import com.example.kazan.R
 import com.example.kazan.adapters.EventAdapter
 import com.example.kazan.adapters.ManAdapter
 import com.example.kazan.adapters.StartupAdapter
-import com.example.kazan.databinding.FragmentHistoryBinding
+import com.example.kazan.databinding.FragmentStudyBinding
 import com.example.kazan.hardcode.eventList
 import com.example.kazan.hardcode.manList
 import com.example.kazan.hardcode.startupList
 import com.example.kazan.shared_preferences.SharedPrefs
 
-class HistoryFragment : Fragment() {
+class StudyFragment : Fragment() {
 
-    lateinit var binding: FragmentHistoryBinding
+    lateinit var binding: FragmentStudyBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        binding = FragmentHistoryBinding.inflate(inflater, container, false)
+        binding = FragmentStudyBinding.inflate(inflater, container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         (requireActivity() as MainActivity).setSupportActionBar(binding.toolbar)
+        (requireActivity() as MainActivity).supportActionBar?.setDisplayShowTitleEnabled(false)
+        (requireActivity() as MainActivity).supportActionBar?.setDisplayHomeAsUpEnabled(true)
         binding.toolbar.setNavigationOnClickListener {
             (requireActivity() as MainActivity).binding.main.openDrawer(GravityCompat.START)
         }
         setHasOptionsMenu(true)
+        binding.events.isChecked = true
         binding.recycler.adapter = EventAdapter(eventList)
     }
 

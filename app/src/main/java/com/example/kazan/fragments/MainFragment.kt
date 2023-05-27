@@ -1,6 +1,7 @@
 package com.example.kazan.fragments
 
 import android.os.Bundle
+import android.view.Gravity
 import android.view.LayoutInflater
 import android.view.MotionEvent
 import android.view.View
@@ -36,36 +37,37 @@ class MainFragment : Fragment(),OuterRecycleLocker,MoveToTab {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val user = SharedPrefs.getValue(
-            requireContext(),
-            "name"
-        )
         (requireActivity() as MainActivity).setSupportActionBar(binding.toolbar)
         binding.toolbar.setNavigationOnClickListener {
             (requireActivity() as MainActivity).binding.main.openDrawer(GravityCompat.START)
         }
+        val hello = "Привет ${SharedPrefs.getValue(requireContext(), "name")}"
+        binding.textToolbar.text = hello
+        binding.textToolbar.gravity = Gravity.START
         setTabs()
-        setTitle(user)
+        setTitle(hello)
         requireActivity().onBackPressedDispatcher.addCallback(viewLifecycleOwner, backCallback)
-        (requireActivity() as MainActivity).binding.user.text = user
+        (requireActivity() as MainActivity).binding.user.text = SharedPrefs.getValue(requireContext(), "name")
     }
 
-    private fun setTitle(user: String) {
-        val nameTabs = arrayListOf(
-            "Привет $user", "События",
-            if (SharedPrefs.getValue(
-                    requireContext(),
-                    "role"
-                ) == "Стартапер"
-            ) "Люди" else "Стартапы"
-        )
-        binding.textToolbar.text = nameTabs[0]
+    private fun setTitle(hello: String) {
         binding.tabs.addOnTabSelectedListener(object : TabLayout.OnTabSelectedListener {
             override fun onTabSelected(tab: TabLayout.Tab?) {
-                val int = tab?.position
-                binding.textToolbar.text = nameTabs[int ?: 0]
+                when (tab?.position) {
+                    0 -> {
+                        binding.textToolbar.gravity = Gravity.START
+                        binding.textToolbar.text = hello
+                    }
+                    1 -> {
+                        binding.textToolbar.text = "События"
+                        binding.textToolbar.gravity = Gravity.CENTER
+                    }
+                    2 -> {
+                        binding.textToolbar.gravity = Gravity.CENTER
+                        binding.textToolbar.text = if (SharedPrefs.getValue(requireContext(),"role") == "Стартапер") "Люди" else "Стартапы"
+                    }
+                }
             }
-
             override fun onTabUnselected(tab: TabLayout.Tab?) {}
             override fun onTabReselected(tab: TabLayout.Tab?) {}
         })

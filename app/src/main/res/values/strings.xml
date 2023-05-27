@@ -28,6 +28,12 @@
     <string name="Resume"><u>Резюме</u></string>
     <string name="Portfolio"><u>Портфолио</u></string>
     <string name="About">О себе</string>
+    <string name="Event">События</string>
+    <string name="ok">Готово</string>
+    <string name="Favorite">Избранное</string>
+    <string name="History">История событий</string>
+    <string name="State">Статьи</string>
+    <string name="Course">Курсы</string>
     <string-array name="spinner_role">
         <item>Специалист</item>
         <item>Стартапер</item>

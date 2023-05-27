@@ -12,9 +12,9 @@ import com.example.kazan.interfaces.ListenerStartup
 
 class StartupAdapter (
     private val startup: List<Startup>,
-    private val listener: ListenerStartup
+    private val listener: ListenerStartup? = null
 ) : RecyclerView.Adapter<StartupAdapter.StartupViewHolder>() {
-    class StartupViewHolder(val view: View, val listener: ListenerStartup): ViewHolder(view) {
+    class StartupViewHolder(val view: View, val listener: ListenerStartup?): ViewHolder(view) {
         private val cardStartup = ItemStartupBinding.bind(view)
 
         fun bind(startup: Startup) {
@@ -24,9 +24,8 @@ class StartupAdapter (
                 startupLink.text = startup.link
             }
             itemView.setOnClickListener {
-                listener.onClick(startup)
+                listener?.onClick(startup)
             }
-
         }
     }
 
