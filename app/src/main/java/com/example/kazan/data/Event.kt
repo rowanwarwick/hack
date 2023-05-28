@@ -10,7 +10,7 @@ data class Event(
     val date: String,
     val address: String,
     val speakers: List<Int>,
-    val typeEvent : TypeEvent,
+    val typeEvent : String,
     val about : String,
     val webAddress : String,
     val favorite : Boolean
