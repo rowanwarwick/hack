@@ -1,4 +1,5 @@
 package com.example.kazan.enums
 
-enum class ThemeEvent {
+enum class ThemeEvent (val theme : String) {
+
 }

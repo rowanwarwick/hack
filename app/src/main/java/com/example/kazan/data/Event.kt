@@ -13,5 +13,5 @@ data class Event(
     val typeEvent : String,
     val about : String,
     val webAddress : String,
-    val favorite : Boolean
+    val isFavorite : Boolean
 ) : Serializable

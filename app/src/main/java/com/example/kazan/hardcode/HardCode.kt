@@ -5,6 +5,9 @@ import com.example.kazan.data.Event
 import com.example.kazan.data.Man
 import com.example.kazan.data.Startup
 import com.example.kazan.enums.FormaEvent
+import com.example.kazan.enums.IndustryInvestor
+import com.example.kazan.enums.StageInvestor
+import com.example.kazan.enums.SumInvestor
 import com.example.kazan.enums.TypeEvent
 
 val eventList = listOf(
@@ -123,18 +126,120 @@ val startupList = listOf(
 )
 
 val manList = listOf(
-    Man("Человек №1", "1", listOf("room", "dram", "babababam"), "Инвестор"),
-    Man("Человек №2", "1", listOf("room", "dram", "babababam"), "Инвестор"),
-    Man("Человек №3", "1", listOf("room", "dram", "babababam"), "Инвестор"),
-    Man("Человек №4", "1", listOf("room", "dram", "babababam"), "Специалист"),
-    Man("Человек №5", "1", listOf("room", "dram", "babababam"), "Специалист"),
-    Man("Человек №6", "1", listOf("room", "dram", "babababam"), "Специалист"),
-    Man("Человек №7", "1", listOf("room", "dram", "babababam"), "Инвестор"),
-    Man("Человек №8", "1", listOf("room", "dram", "babababam"), "Инвестор"),
-    Man("Человек №9", "1", listOf("room", "dram", "babababam"), "Специалист"),
-    Man("Человек №10", "1", listOf("room", "dram", "babababam"), "Специалист"),
-    Man("Человек №11", "1", listOf("room", "dram", "babababam"), "Специалист"),
-    Man("Человек №12", "1", listOf("room", "dram", "babababam"), "Инвестор"),
-    Man("Человек №13", "1", listOf("room", "dram", "babababam"), "Инвестор"),
+    Man(
+        "Алексей Пронягин",
+        R.drawable.man1,
+        listOf("Биоинженерия", "AR/VR", "Ed-Tech"),
+        "Инвестор",
+        "Очень богатый человек, люблю делиться деньгами с другими людьми, чтобы они развивали свои проекты и все в мире стали богачами.",
+        "до 1 млн рублей",
+        listOf("Pre-seed", "Seed", "Раунд А"),
+        false,
+        true
+    ),
+    Man(
+        "Дарья Алексеева",
+        R.drawable.man5,
+        IndustryInvestor.values().map { it.industry }.shuffled().take(4),
+        "Инвестор",
+        "Очень богатый человек, люблю делиться деньгами с другими людьми, чтобы они развивали свои проекты и все в мире стали богачами.",
+        "до 1 млн рублей",
+        listOf(StageInvestor.A.stage, StageInvestor.B.stage, StageInvestor.C.stage),
+        false,
+        true
+    ),
+    Man(
+        "Петр Севергин",
+        R.drawable.man3,
+        IndustryInvestor.values().map { it.industry }.shuffled().take(4),
+        "Инвестор",
+        "Очень богатый человек, люблю делиться деньгами с другими людьми, чтобы они развивали свои проекты и все в мире стали богачами.",
+        "до 1 млн рублей",
+        listOf(StageInvestor.A.stage, StageInvestor.B.stage, StageInvestor.C.stage),
+        false,
+        true
+    ),
+    Man(
+        "Сергей Лапкис",
+        R.drawable.man4,
+        IndustryInvestor.values().map { it.industry }.shuffled().take(4),
+        "Специалист",
+        "Очень профессиональный специалист. Люблю свое дело и хочу делать мир лучше!",
+        "до 1 млн рублей",
+        listOf(StageInvestor.A.stage, StageInvestor.B.stage, StageInvestor.C.stage),
+        false,
+        isInvestor = false
+    ),
+    Man(
+        "Александр Ивлеев",
+        R.drawable.man2,
+        IndustryInvestor.values().map { it.industry }.shuffled().take(4),
+        "Специалист",
+        "Очень профессиональный специалист. Люблю свое дело и хочу делать мир лучше!",
+        "до 1 млн рублей",
+        listOf(StageInvestor.A.stage, StageInvestor.B.stage, StageInvestor.C.stage),
+        false,
+        isInvestor = false
+    ),
+    Man(
+        "Виталий Олешко",
+        R.drawable.man1,
+        IndustryInvestor.values().map { it.industry }.shuffled().take(4),
+        "Специалист",
+        "Очень профессиональный специалист. Люблю свое дело и хочу делать мир лучше!",
+        SumInvestor.values().random().sum,
+        listOf(StageInvestor.A.stage, StageInvestor.B.stage, StageInvestor.C.stage),
+        false,
+        isInvestor = false
+    ),
+    Man(
+        "Иван Артемов",
+        R.drawable.man1,
+        IndustryInvestor.values().map { it.industry }.shuffled().take(4),
+        "Инвестор",
+        "Очень богатый человек, люблю делиться деньгами с другими людьми, чтобы они развивали свои проекты и все в мире стали богачами.",
+        "до 1 млн рублей",
+        listOf("Pre-seed", "Seed", "Раунд А"),
+        false,
+        true
+    ),
+    Man(
+        "Оксана Иванова",
+        R.drawable.man5,
+        IndustryInvestor.values().map { it.industry }.shuffled().take(4),
+        "Инвестор",
+        "Очень богатый человек, люблю делиться деньгами с другими людьми, чтобы они развивали свои проекты и все в мире стали богачами.",
+        "до 1 млн рублей",
+        listOf(StageInvestor.A.stage, StageInvestor.B.stage, StageInvestor.C.stage),
+        false,
+        true
+    ),
+    Man(
+        "Петр Горбачев",
+        R.drawable.man1,
+        IndustryInvestor.values().map { it.industry }.shuffled().take(4),
+        "Специалист",
+        "Очень профессиональный специалист. Люблю свое дело и хочу делать мир лучше!",
+        SumInvestor.values().random().sum,
+        listOf(StageInvestor.A.stage, StageInvestor.B.stage, StageInvestor.C.stage),
+        false,
+        isInvestor = false
+    ),
+    Man(
+        "Константин Олешко",
+        R.drawable.man4,
+        IndustryInvestor.values().map { it.industry }.shuffled().take(4),
+        "Специалист",
+        "Очень профессиональный специалист. Люблю свое дело и хочу делать мир лучше!",
+        SumInvestor.values().random().sum,
+        listOf(StageInvestor.A.stage, StageInvestor.B.stage, StageInvestor.C.stage),
+        false,
+        isInvestor = false
+    ),
+//    Man("Человек №9", "1", listOf("room", "dram", "babababam"), "Специалист"),
+//    Man("Человек №10", "1", listOf("room", "dram", "babababam"), "Специалист"),
+//    Man("Человек №11", "1", listOf("room", "dram", "babababam"), "Специалист"),
+//    Man("Человек №12", "1", listOf("room", "dram", "babababam"), "Инвестор"),
+//    Man("Человек №13", "1", listOf("room", "dram", "babababam"), "Инвестор"),
 )
 
