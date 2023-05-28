@@ -12,13 +12,8 @@ import androidx.core.view.GravityCompat
 import com.example.kazan.MainActivity
 import com.example.kazan.R
 import com.example.kazan.adapters.EventAdapter
-import com.example.kazan.adapters.ManAdapter
-import com.example.kazan.adapters.StartupAdapter
 import com.example.kazan.databinding.FragmentHistoryBinding
 import com.example.kazan.hardcode.eventList
-import com.example.kazan.hardcode.manList
-import com.example.kazan.hardcode.startupList
-import com.example.kazan.shared_preferences.SharedPrefs
 
 class HistoryFragment : Fragment() {
 
