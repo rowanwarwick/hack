@@ -34,6 +34,8 @@
     <string name="History">История событий</string>
     <string name="State">Статьи</string>
     <string name="Course">Курсы</string>
+    <string name="Message">Сообщения</string>
+    <string name="send_anything">Напишите что-нибудь</string>
     <string-array name="spinner_role">
         <item>Специалист</item>
         <item>Стартапер</item>

@@ -22,7 +22,6 @@
                 android:id="@+id/title"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginEnd="50dp"
                 android:fontFamily="@font/montserrat_semibold"
                 android:gravity="center"
                 android:textColor="@color/textColor"

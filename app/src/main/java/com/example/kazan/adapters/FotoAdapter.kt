@@ -7,12 +7,12 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.kazan.R
 import com.example.kazan.databinding.ItemFotoBinding
 
-class FotoAdapter(private val list: List<String>) :RecyclerView.Adapter<FotoAdapter.FotoViewHolder>() {
+class FotoAdapter(private val list: List<Int>) :RecyclerView.Adapter<FotoAdapter.FotoViewHolder>() {
 
     class FotoViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         private val picture = ItemFotoBinding.bind(view)
-
-        fun bind(man: String) {
+        fun bind(man: Int) {
+            picture.foto.setImageResource(man)
         }
     }
 

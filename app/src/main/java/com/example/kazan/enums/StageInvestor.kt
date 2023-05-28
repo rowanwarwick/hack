@@ -1,6 +1,6 @@
 package com.example.kazan.enums
 
-enum class StageInvestor(stage: String) {
+enum class StageInvestor(val stage: String) {
     A("pre-seed"),
     B("seed"),
     C("раунд А"),

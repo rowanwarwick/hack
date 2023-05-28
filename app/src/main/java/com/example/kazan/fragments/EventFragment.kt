@@ -37,6 +37,10 @@ class EventFragment : Fragment() {
             binding.eventAddress.isSelected = true
             binding.eventDate.text = event.date
             binding.eventDate.isSelected = true
+            binding.infoEvent.text = event.about
+            binding.website.text = event.webAddress
+            binding.pagerSpeakers.adapter = FotoAdapter(event.speakers)
+            binding.signUp.isSelected = event.isFavorite
         }
         (requireActivity() as MainActivity).setSupportActionBar(binding.toolbar)
         (requireActivity() as MainActivity).supportActionBar?.setDisplayShowTitleEnabled(false)
@@ -44,6 +48,5 @@ class EventFragment : Fragment() {
         binding.toolbar.setNavigationOnClickListener {
             requireActivity().onBackPressedDispatcher.onBackPressed()
         }
-        binding.pagerSpeakers.adapter = FotoAdapter(List(6) {"foto"})
     }
 }

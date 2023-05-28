@@ -41,7 +41,7 @@ class MainFragment : Fragment(),OuterRecycleLocker,MoveToTab {
         binding.toolbar.setNavigationOnClickListener {
             (requireActivity() as MainActivity).binding.main.openDrawer(GravityCompat.START)
         }
-        val hello = "Привет ${SharedPrefs.getValue(requireContext(), "name")}"
+        val hello = "Привет, ${SharedPrefs.getValue(requireContext(), "name")}"
         binding.textToolbar.text = hello
         binding.textToolbar.gravity = Gravity.START
         setTabs()

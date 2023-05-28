@@ -28,6 +28,7 @@ class StartupFragment : Fragment() {
         val event = arguments?.getSerializable("startup") as Startup?
         if (event != null) {
             binding.name.text = event.name
+            binding.pagerSpeakers.adapter = FotoAdapter(event.basedImages)
         }
         (requireActivity() as MainActivity).setSupportActionBar(binding.toolbar)
         (requireActivity() as MainActivity).supportActionBar?.setDisplayShowTitleEnabled(false)
@@ -35,6 +36,6 @@ class StartupFragment : Fragment() {
         binding.toolbar.setNavigationOnClickListener {
             requireActivity().onBackPressedDispatcher.onBackPressed()
         }
-        binding.pagerSpeakers.adapter = FotoAdapter(List(6) {"foto"})
+
     }
 }
